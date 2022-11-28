@@ -49,6 +49,8 @@ if ((trigPin, LOW) && (!SD.begin(10))) {
 // Let's turn off trigPin for now.
 digitalWrite(trigPin, LOW);
  
+myFile = SD.open("qiyascc.txt", FILE_WRITE);
+
 // Get a alert if the file is not/created.
 if (!myFile) {
         Serial.println("Error: Problem creating file, check and try again.");
