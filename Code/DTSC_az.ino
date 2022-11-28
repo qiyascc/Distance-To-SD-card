@@ -49,7 +49,9 @@ if ((trigPin, LOW) && (!SD.begin(10))) {
 
 // trigPin'i hələlik söndürək.
 digitalWrite(trigPin, LOW);
- 
+
+myFile = SD.open("qiyascc.txt", FILE_WRITE);
+
 // Əgər fayl açılmasa/yaradıla bilməsə xəbərdar olaq.   
 if (!myFile) {
         Serial.println("Xəta: fayl açılarkən problem baş verdi, kontrol eləyib təkrar test edin.");
