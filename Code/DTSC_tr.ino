@@ -48,7 +48,9 @@ if ((trigPin, LOW) && (!SD.begin(10))) {
 
 // trigPin'i şimdilik kapatalım.
 digitalWrite(trigPin, LOW);
- 
+
+myFile = SD.open("qiyascc.txt", FILE_WRITE);
+
 // Eğer dosya oluşturulmazsa/oluşturulursa uyarı alalım.
 if (!myFile) {
         Serial.println("Hata: dosya oluşturulurken sorun oluştu, konteol edip tekrar deneyin.");
